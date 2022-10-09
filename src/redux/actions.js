@@ -18,14 +18,14 @@ export const filterSearch = (text) => {
 
 export const filterStatus = (status) => {
   return {
-    type: "filter/status",
+    type: "filters/status",
     payload: status,
   };
 };
 
 export const filterPriority = (priority = []) => {
   return {
-    type: "filter/priority",
+    type: "filters/priority",
     payload: priority,
   };
 };

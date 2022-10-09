@@ -21,7 +21,7 @@ export default function TodoList() {
   const handleSubmit = () => {
     dispatch(
       addTodo({
-        id: uuidV4,
+        id: uuidV4(),
         name: todo,
         priority: priority,
         completed: false,
@@ -35,6 +35,7 @@ export default function TodoList() {
         {todoList.map((todo) => (
           <Todo
             key={todo.id}
+            id={todo.id}
             name={todo.name}
             priority={todo.priority}
             completed={todo.completed}
