@@ -6,6 +6,7 @@ import {
   filterSearch,
   filterStatus,
 } from "../../redux/actions";
+import filtersSlice from "./filtersSlice";
 
 const { Search } = Input;
 
@@ -17,15 +18,15 @@ export default function Filters() {
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
-    dispatch(filterSearch(e.target.value));
+    dispatch(filtersSlice.actions.search(e.target.value));
   };
   const handleStatus = (e) => {
     setStatus(e.target.value);
-    dispatch(filterStatus(e.target.value));
+    dispatch(filtersSlice.actions.status(e.target.value));
   };
   const handlePriority = (value) => {
     setPriority(value);
-    dispatch(filterPriority(value));
+    dispatch(filtersSlice.actions.priority(value));
   };
 
   return (
